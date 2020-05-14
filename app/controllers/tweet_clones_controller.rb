@@ -1,5 +1,5 @@
 class TweetClonesController < ApplicationController
-  before_action :set_tweet, only: [:show, :edit, :update]
+  before_action :set_tweet, only: [:show, :edit, :update, :destroy]
   def index
     @tweetposts = TweetClone.all
   end
@@ -28,7 +28,10 @@ class TweetClonesController < ApplicationController
       render :edit
     end
   end
-
+  def destroy
+    @tweet_clone.destroy
+    redirect_to tweet_clones_path, notice: "投稿をを削除しました"
+  end
   private
   def tweet_params
     params.require(:tweet_clone).permit(:content) #ストロングパラメータにし、さらにprivateメソッド配下にする
