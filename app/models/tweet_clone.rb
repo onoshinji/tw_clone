@@ -1,0 +1,2 @@
+class TweetClone < ApplicationRecord
+end
