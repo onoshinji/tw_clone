@@ -1,5 +1,6 @@
 class TweetClonesController < ApplicationController
   def index
+    @tweetposts = TweetClone.all
   end
   def new
     @tweet_clone = TweetClone.new
