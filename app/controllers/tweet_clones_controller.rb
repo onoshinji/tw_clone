@@ -3,22 +3,23 @@ class TweetClonesController < ApplicationController
   def index
     @tweetposts = TweetClone.all
   end
-
   def new
     @tweet_clone = TweetClone.new
   end
   def create
     @tweet_clone = TweetClone.new(tweet_params)
-    if @tweet_clone.save
-    redirect_to tweet_clones_path, notice: "投稿を作成しました"
-    else
+    if params[:back]
       render :new
+    else
+      if @tweet_clone.save
+        redirect_to tweet_clones_path, notice: "投稿を作成しました"
+      else
+        render :new
+      end
     end
   end
-
   def show
   end
-
   def edit
   end
   def update
@@ -31,6 +32,10 @@ class TweetClonesController < ApplicationController
   def destroy
     @tweet_clone.destroy
     redirect_to tweet_clones_path, notice: "投稿をを削除しました"
+  end
+  def confirm
+    @tweet_clone = TweetClone.new(tweet_params)
+    render :new if @tweet_clone.invalid?  #後置if文によるバリデーション設定
   end
   private
   def tweet_params
