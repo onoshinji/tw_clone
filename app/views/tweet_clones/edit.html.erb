@@ -1,18 +1,2 @@
-<%= form_with(model: @tweet_clone, local: true) do |form| %>
-  <% if @tweet_clone.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= @tweet_clone.errors.count %>件のエラーがあります。</h2>
-      <ul>
-        <% @tweet_clone.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-  <div class="blog_content">
-    <%= form.label :投稿内容 %>
-    <%= form.text_area :content %>
-  </div>
-  <%= form.submit  value = "この投稿でつぶやく"%>
-<% end %>
-<%= link_to '投稿一覧', tweet_clones_path %>
+<h2>投稿を編集する</h2>
+<%= render 'form' %>

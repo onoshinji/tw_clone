@@ -1,4 +1,5 @@
 class TweetClonesController < ApplicationController
+  before_action :set_tweet, only: [:show, :edit, :update]
   def index
     @tweetposts = TweetClone.all
   end
@@ -16,14 +17,11 @@ class TweetClonesController < ApplicationController
   end
 
   def show
-    @tweet_clone = TweetClone.find(params[:id])
   end
 
   def edit
-    @tweet_clone = TweetClone.find(params[:id])
   end
   def update
-    @tweet_clone = TweetClone.find(params[:id])
     if @tweet_clone.update(tweet_params)
       redirect_to tweet_clone_path, notice: "投稿を編集しました"
     else
@@ -34,5 +32,9 @@ class TweetClonesController < ApplicationController
   private
   def tweet_params
     params.require(:tweet_clone).permit(:content) #ストロングパラメータにし、さらにprivateメソッド配下にする
+  end
+  #idをキーとして値を取得する共通メソッドを定義する
+  def set_tweet
+    @tweet_clone = TweetClone.find(params[:id])
   end
 end
