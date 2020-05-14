@@ -1,7 +1,26 @@
-<h3>以下の内容で、送信する。</h3>
-<%= form_with(model: @tweet_clone, local: true) do |form| %>
-  <%= form.hidden_field :content %>
-  <p>投稿内容:<%= @tweet_clone.content %></p>
-  <%= form.submit  "投稿するする~" %>
-  <%= form.submit "戻る", name: 'back' %>
-<% end %>
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>投稿確認ページ</title>
+    <link rel="stylesheet" href="tw_sample/app/assets/stylesheets/tweet_clones.scss">
+    <link rel="stylesheet" href="tw_sample/app/assets/stylesheets/normalize.css">
+  </head>
+  <header>
+    <p>今の気持ちを伝えよう</p>
+  </header>
+  <body>
+    <div class = "container">
+    <h3>以下の内容で、送信する。</h3>
+    <%= form_with(model: @tweet_clone, local: true) do |form| %>
+    <%= form.hidden_field :content %>
+    <p>投稿内容:<%= @tweet_clone.content %></p>
+    <%= form.submit  "投稿するする~" %>
+    <%= form.submit "戻る", name: 'back' %>
+    <% end %>
+    </div>
+  </body>
+  <footer>
+    <p>Copyright © 2020 SHINJI ONO All RIGHTS RESERVED.</p>
+  </footer>
+</html>

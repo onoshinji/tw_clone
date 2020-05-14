@@ -9,10 +9,15 @@
       </ul>
     </div>
   <% end %>
-  <div class="blog_content">
+  <div class="tweet_content">
     <%= form.label :投稿内容 %>
+    <br>
     <%= form.text_area :content %>
   </div>
-  <%= form.submit  value = "この投稿でつぶやく"%>
+  <div class="tweet_content">
+  <%= form.submit  value = "この投稿でつぶやく" %>
+  </div>
 <% end %>
+  <div class = "link_text">
 <%= link_to '投稿一覧', tweet_clones_path %>
+  </div>

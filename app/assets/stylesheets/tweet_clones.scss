@@ -1,3 +1,43 @@
-// Place all the styles related to the tweet_clones controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+header{
+  width: 100%;
+  height: 3%;
+  font-size: 2rem;
+  background-color: #a8d3ff;
+  text-align: center;
+}
+header p{
+  margin: 0;
+  padding-bottom: 2rem;
+}
+.container {
+  position: relative;
+}
+h2{
+  text-align: center;
+}
+#error_explanation{
+  text-align: center;
+  color: red;
+}
+.tweet_content{
+  text-align: center;
+  margin: 0 auto;
+  font-size: 1.5rem;
+}
+table{
+  background-color: #ffffa8;
+  border: 1;
+  text-align: center;
+}
+.link_text{
+  text-align: center;
+}
+footer{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  font-size: 2rem;
+  color: #fff;
+  background-color: #a8d3ff;
+  text-align: center;
+}

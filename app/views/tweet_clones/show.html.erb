@@ -1,5 +1,28 @@
-<h1>投稿詳細画面</h1>
-<%= notice %>
-<p>内容: <%= @tweet_clone.content %></p>
-<%= link_to '新しいつぶやきを投稿する', new_tweet_clone_path %>
-<%= link_to '投稿一覧', tweet_clones_path %>
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>投稿詳細ページ</title>
+    <link rel="stylesheet" href="tw_sample/app/assets/stylesheets/tweet_clones.scss">
+    <link rel="stylesheet" href="tw_sample/app/assets/stylesheets/normalize.css">
+  </head>
+  <header>
+    <p>今の気持ちを伝えよう</p>
+  </header>
+  <body>
+    <div class = "container">
+      <div class="tweet_content">
+        <h2>投稿詳細画面</h2>
+          <%= notice %>
+          <p>内容: <%= @tweet_clone.content %></p>
+          <%= link_to '新しいつぶやきを投稿する', new_tweet_clone_path %>
+          <br>
+          <br>
+          <%= link_to '投稿一覧', tweet_clones_path %>
+      </div>
+    </div>
+  </body>
+  <footer>
+    <p>Copyright © 2020 SHINJI ONO All RIGHTS RESERVED.</p>
+  </footer>
+</html>
